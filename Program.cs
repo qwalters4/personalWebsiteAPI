@@ -1,8 +1,8 @@
 using Microsoft.EntityFrameworkCore;
-using RDPDocumentationWebAPI.Models;
+using PersonalWebsiteWebAPI.Models;
 using System.Text.Json.Serialization;
 
-namespace RDPDocumentationWebAPI
+namespace PersonalWebsiteWebAPI
 {
     public class Program
     {
@@ -23,7 +23,7 @@ namespace RDPDocumentationWebAPI
                 // ignore omitted parameters on models to enable optional params (e.g. User update)
                 x.JsonSerializerOptions.IgnoreNullValues = true;
             });
-            builder.Services.AddDbContext<ChangelogContext>(opt => opt.UseInMemoryDatabase("Changelogs"));
+            builder.Services.AddDbContext<ProjectContext>(opt => opt.UseInMemoryDatabase("Projects"));
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
